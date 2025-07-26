@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd ${HOME}/github/pdkovacs/dev-env
 
 cp ~/.config/tmux-sessionizer/tmux-sessionizer.conf ./dotfiles
