@@ -7,4 +7,4 @@ cp ~/.tmux.conf ./dotfiles
 cp ~/.bashrc ./dotfiles
 cp ~/.profile dotfiles/
 
-brew ls >>programs/brew-packages
+brew ls >>programs/brew-packages/packages.txt
