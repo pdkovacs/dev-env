@@ -147,7 +147,7 @@ set -o vi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export HOMEBREW_AUTO_UPDATE_SECS="86400"
-# source <(kubectl completion bash)
+source <(kubectl completion bash)
 
 # check if function exists and define empty one if doesn't
 if [[ $(type -t "__vte_prompt_command") != function ]]; then
@@ -160,19 +160,20 @@ fi
 # 	source /etc/profile.d/vte.sh
 # fi
 
-export EDITOR=vim
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-
-eval "$(task --completion bash)"
-
-
 export FZF_CTRL_R_OPTS="\
   --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'\
   --color header:italic\
   --header 'Press CTRL-Y to copy command into clipboard'"
 eval "$(fzf --bash)"
 
+export EDITOR=vim
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
 . ~/bin/z.sh
+
+# taskfile
+eval "$(task --completion bash)"
+

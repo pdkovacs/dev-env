@@ -2,9 +2,7 @@
 
 cd ${HOME}/github/pdkovacs/dev-env
 
-cp ~/.config/tmux-sessionizer/tmux-sessionizer.conf ./dotfiles
-cp ~/.tmux.conf ./dotfiles
 cp ~/.bashrc ./dotfiles
-cp ~/.profile dotfiles/
-
-brew ls >>programs/brew-packages/packages.txt
+cp ~/.profile ./dotfiles/
+brew leaves > ./programs/brew-packages/packages.txt
+cp ~/.config/Code/User/*.json ./config/Code/User

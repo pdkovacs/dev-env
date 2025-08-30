@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Quiet Light",
+    "editor.fontFamily": "'Noto Sans Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.guides.bracketPairs": "active",
+    "window.titleBarStyle": "custom",
+    "window.title": "${rootNameShort}${separator}${activeEditorShort}",
+    "editor.fontSize": 12,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always"
+    },
+    "terminal.integrated.fontSize": 12,
+    "workbench.activityBar.location": "top",
+    "window.customTitleBarVisibility": "auto",
+    "diffEditor.renderSideBySide": false,
+    "window.density.editorTabHeight": "compact",
+    "chat.commandCenter.enabled": false,
+    "gitlens.codeLens.enabled": false
+}

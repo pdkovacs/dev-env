@@ -9,28 +9,26 @@
 #umask 022
 
 # if running bash
-if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+if [ -n "$BASH_VERSION" ]; then
+  # include .bashrc if it exists
+  if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+  fi
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH=$PATH:${HOME}/bin:/usr/local/go/bin:${HOME}/Programs/nvim-linux64/bin
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 
-export PATH="${HOME}/bin:$PATH"
-. "$HOME/.cargo/env"
-
-export PATH="${HOME}/Programs/idea/bin:$PATH"
+if [ -d "$HOME/platform-tools-latest-linux/platform-tools" ]; then
+  export PATH="$HOME/platform-tools-latest-linux/platform-tools:$PATH"
+fi
