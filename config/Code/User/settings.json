@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Quiet Light",
     "editor.fontFamily": "'Noto Sans Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.guides.bracketPairs": "active",
     "window.titleBarStyle": "custom",
@@ -15,5 +15,6 @@
     "diffEditor.renderSideBySide": false,
     "window.density.editorTabHeight": "compact",
     "chat.commandCenter.enabled": false,
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    "workbench.tree.indent": 16
 }
