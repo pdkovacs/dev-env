@@ -10,8 +10,8 @@ XCALIAPP_USERNAME="peter.dunay.kovacs@gmail.com" \
   XCALIAPP_DRAWINGREPO_wsgw_ROOT=${HOME}/github/pdkovacs/wsgw \
   XCALIAPP_DRAWINGREPO_wsgw_PATH=doc/design/diagrams \
   XCALIAPP_DRAWINGREPO_xcaliapp_STORETYPE=LOCAL_GIT \
-  XCALIAPP_DRAWINGREPO_xcaliapp_ROOT=${HOME}/gitlab/diagrams/xcalidraw \
-  XCALIAPP_DRAWINGREPO_xcaliapp_PATH=/ \
+  XCALIAPP_DRAWINGREPO_xcaliapp_ROOT=${HOME}/workspace/xcaliapp/main \
+  XCALIAPP_DRAWINGREPO_xcaliapp_PATH=doc/design/diagrams \
   ${HOME}/workspace/xcaliapp/server/xcaliapp_linux_amd64
 EOF
 chmod +x ${HOME}/bin/xcaliapp.sh
