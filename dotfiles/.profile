@@ -29,6 +29,6 @@ fi
 export PATH=$PATH:${HOME}/bin:/usr/local/go/bin:${HOME}/Programs/nvim-linux64/bin
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 
-if [ -d "$HOME/platform-tools-latest-linux/platform-tools" ]; then
-  export PATH="$HOME/platform-tools-latest-linux/platform-tools:$PATH"
+if [ -d "$HOME/adb-fastboot/platform-tools" ]; then
+  export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
 fi

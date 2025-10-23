@@ -1,3 +1,4 @@
+fswatch
 fzf
 go
 go-task
