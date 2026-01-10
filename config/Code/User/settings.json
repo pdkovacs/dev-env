@@ -19,5 +19,13 @@
     "workbench.tree.indent": 16,
     "files.exclude": {
         "node_modules": true
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "makefile.configureOnOpen": false,
+    "go.toolsManagement.autoUpdate": true,
+    "vs-kubernetes": {
+        "disable-linters": [
+            "resource-limits"
+        ]
     }
 }

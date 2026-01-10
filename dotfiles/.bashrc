@@ -177,9 +177,7 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # taskfile
 eval "$(task --completion bash)"
 
-# Load Angular CLI autocompletion.
-if which ng > /dev/null;
-then
-  source <(ng completion script)
-fi
-
+# aws
+AWS_BASH_COMPLETER=/snap/aws-cli/1681/bin/aws_completer
+complete -C "$AWS_BASH_COMPLETER" aws
+. "$HOME/.cargo/env"

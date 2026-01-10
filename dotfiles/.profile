@@ -32,3 +32,7 @@ export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 if [ -d "$HOME/adb-fastboot/platform-tools" ]; then
   export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
 fi
+
+export AWS_BASH_COMPLETER=/snap/aws-cli/1681/bin/aws_completer
+export PATH="$PATH:$AWS_BASH_COMPLETER"
+. "$HOME/.cargo/env"
