@@ -1,6 +1,7 @@
 ######################################
 # xcaliapp.sh
 ######################################
+mkdir -p ~/bin
 cat > ${HOME}/bin/xcaliapp.sh <<EOF
 #!/bin/bash
 XCALIAPP_USERNAME="peter.dunay.kovacs@gmail.com" \
@@ -20,6 +21,7 @@ chmod +x ${HOME}/bin/xcaliapp.sh
 ######################################
 # z
 ######################################
+mkdir -p ~/Downloads
 curl https://codeload.github.com/rupa/z/tar.gz/refs/tags/v1.12 -o ~/Downloads/z-1.12.tar.gz
 cd ~/Downloads/
 tar xzf z-1.12.tar.gz
