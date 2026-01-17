@@ -1,3 +1,11 @@
+# Initial snap store update
+
+```
+sudo snap remove snap-store
+sudo snap refresh
+sudo snap install snap-store
+```
+
 # AMD
 
 ## Work around wireless issues
