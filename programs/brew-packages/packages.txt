@@ -1,5 +1,4 @@
 cmake
-curl
 fswatch
 fzf
 go
@@ -13,6 +12,7 @@ neovim
 nvm
 pcre
 ripgrep
+rust
 terragrunt
 tfenv
 tree
