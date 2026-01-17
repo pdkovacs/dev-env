@@ -33,6 +33,6 @@ if [ -d "$HOME/adb-fastboot/platform-tools" ]; then
   export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
 fi
 
-export AWS_BASH_COMPLETER=/snap/aws-cli/1681/bin/aws_completer
+export AWS_BASH_COMPLETER=/snap/aws-cli/current/bin/aws_completer
 export PATH="$PATH:$AWS_BASH_COMPLETER"
 . "$HOME/.cargo/env"
