@@ -178,6 +178,11 @@ export PATH=$BUN_INSTALL/bin:$PATH
 eval "$(task --completion bash)"
 
 # aws
-AWS_BASH_COMPLETER=/snap/aws-cli/1681/bin/aws_completer
+AWS_BASH_COMPLETER=/snap/aws-cli/current/bin/aws_completer
 complete -C "$AWS_BASH_COMPLETER" aws
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
