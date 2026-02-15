@@ -6,6 +6,43 @@ sudo snap refresh
 sudo snap install snap-store
 ```
 
+# Dell
+
+## Disable hyper-threads
+
+### Disable in BIOS
+
+Find Multi-Threading Control: Look for a setting labeled "Simultaneous Multi-Threading", "AMD SMT", or "Logical Processor".
+
+### Disable in Linux
+
+> "Simultaneous Multi-Threading" is off in the BIOS, I still see twice as many CPUs in top's output as there are physical cores in the CPU.
+
+#### At runtime
+
+```
+cat /sys/devices/system/cpu/smt/control
+```
+
+```
+echo off | sudo tee /sys/devices/system/cpu/smt/control
+```
+
+#### Permanently Disable via GRUB 
+
+To ensure it stays off across reboots (even if the BIOS setting is flaky), add the `nosmt` parameter to your boot loader: 
+
+1. Open your GRUB configuration: sudo nano `/etc/default/grub`
+2. Find the line starting with `GRUB_CMDLINE_LINUX_DEFAULT`.
+3. Add `nosmt` inside the quotes. Example:
+
+    ```
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nosmt"
+    ```
+
+4. Update GRUB: `sudo update-grub`
+5. Reboot your laptop. 
+
 # AMD
 
 ## Work around wireless issues
