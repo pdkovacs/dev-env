@@ -26,6 +26,9 @@
     "vs-kubernetes": {
         "disable-linters": [
             "resource-limits"
-        ]
-    }
+        ],
+        "vs-kubernetes.minikube-show-information-expiration": "2026-07-30T10:40:40.974Z"
+    },
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "docker.extension.enableComposeLanguageServer": false
 }
