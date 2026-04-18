@@ -11,10 +11,9 @@ mockery
 neovim
 nvm
 pcre
-ripgrep
+python@3.14
 rust
 terragrunt
 tfenv
 tree
-tree-sitter
 valkey

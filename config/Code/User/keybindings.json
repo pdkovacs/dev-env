@@ -40,5 +40,31 @@
         "key": "ctrl+shift+tab",
         "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
         "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+k t",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.toggleTerminal",
+                "workbench.action.terminal.focus",
+                "workbench.action.closeSidebar",
+                "workbench.action.closeAuxiliaryBar",
+                "workbench.action.toggleMaximizedPanel"
+            ]
+        }
+    },
+    {
+        "key": "ctrl+k u",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.toggleMaximizedPanel",
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.toggleAuxiliaryBar",
+                "workbench.action.terminal.toggleTerminal",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        }
     }
 ]

@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "One Monokai",
+    "workbench.colorTheme": "GitHub Light",
     "editor.fontFamily": "'Noto Sans Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.guides.bracketPairs": "active",
     "window.titleBarStyle": "custom",
@@ -30,5 +30,8 @@
         "vs-kubernetes.minikube-show-information-expiration": "2026-07-30T10:40:40.974Z"
     },
     "js/ts.updateImportsOnFileMove.enabled": "always",
-    "docker.extension.enableComposeLanguageServer": false
+    "docker.extension.enableComposeLanguageServer": false,
+    "claudeCode.preferredLocation": "sidebar",
+    "claudeCode.useCtrlEnterToSend": true,
+    "claudeCode.usePythonEnvironment": false
 }
