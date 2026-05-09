@@ -187,3 +187,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="$HOME/.local/bin:$PATH"
+
+if [ -z "$AWS_PROFILE" ];
+then 
+	echo "======================================"
+	echo "Export AWS_PROFILE from ~/.bashrc"
+	echo "======================================"
+# export AWS_PROFILE=AdministratorAccess-
+fi

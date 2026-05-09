@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "GitHub Light",
+    "workbench.colorTheme": "One Monokai",
     "editor.fontFamily": "'Noto Sans Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.guides.bracketPairs": "active",
     "window.titleBarStyle": "custom",
@@ -33,5 +33,8 @@
     "docker.extension.enableComposeLanguageServer": false,
     "claudeCode.preferredLocation": "sidebar",
     "claudeCode.useCtrlEnterToSend": true,
-    "claudeCode.usePythonEnvironment": false
+    "claudeCode.usePythonEnvironment": false,
+    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+    "terminal.external.linuxExec": "ptyxis"
 }
