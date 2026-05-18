@@ -1,6 +1,7 @@
 cmake
 fswatch
 fzf
+git-filter-repo
 go
 go-task
 helm
