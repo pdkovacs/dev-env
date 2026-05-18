@@ -1,0 +1,6 @@
+anthropic.claude-code
+azemoh.one-monokai
+dbaeumer.vscode-eslint
+editorconfig.editorconfig
+github.copilot-chat
+wmaurer.change-case
