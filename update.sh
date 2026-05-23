@@ -2,7 +2,7 @@
 
 cd ${HOME}/github/pdkovacs/dev-env
 
-grep -v "skip backing this up" ~/.bashrc > ./dotfiles/.bashrc
+grep -Ev '^[^#].*# skip backing this up' ~/.bashrc > ./dotfiles/.bashrc
 cp ~/.profile ./dotfiles/
 cp ~/.bash_profile ./dotfiles/
 brew leaves > ./programs/brew-packages/packages.txt

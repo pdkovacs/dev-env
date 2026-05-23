@@ -188,10 +188,10 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# export AWS_PROFILE= # skip backing this up
 if [ -z "$AWS_PROFILE" ];
 then 
 	echo "======================================"
 	echo "Export AWS_PROFILE from ~/.bashrc"
 	echo "======================================"
-# export AWS_PROFILE=AdministratorAccess-
 fi
