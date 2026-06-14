@@ -31,11 +31,12 @@
     },
     "js/ts.updateImportsOnFileMove.enabled": "always",
     "docker.extension.enableComposeLanguageServer": false,
-    "claudeCode.preferredLocation": "sidebar",
     "claudeCode.useCtrlEnterToSend": true,
     "claudeCode.usePythonEnvironment": false,
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     "terminal.external.linuxExec": "ptyxis",
-    "workbench.browser.openLocalhostLinks": false
+    "workbench.browser.openLocalhostLinks": false,
+    "extensions.autoUpdate": false,
+    "claudeCode.preferredLocation": "panel"
 }

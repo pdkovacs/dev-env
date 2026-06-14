@@ -3,7 +3,6 @@ azemoh.one-monokai
 dbaeumer.vscode-eslint
 eamodio.gitlens
 editorconfig.editorconfig
-github.copilot-chat
 golang.go
 ms-azuretools.vscode-containers
 ms-kubernetes-tools.vscode-kubernetes-tools
