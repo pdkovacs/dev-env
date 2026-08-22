@@ -4,9 +4,11 @@ dbaeumer.vscode-eslint
 eamodio.gitlens
 editorconfig.editorconfig
 golang.go
+jetbrains.intellij-server
 ms-azuretools.vscode-containers
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-vscode-remote.remote-containers
 redhat.vscode-yaml
 rust-lang.rust-analyzer
 wmaurer.change-case
+zhuangtongfa.material-theme

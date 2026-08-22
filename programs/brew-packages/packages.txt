@@ -8,6 +8,7 @@ helm
 htop
 k9s
 lazygit
+llvm
 mockery
 neovim
 nvm

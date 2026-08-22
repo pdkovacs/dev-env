@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "One Dark Pro Flat",
     "editor.fontFamily": "'Noto Sans Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.guides.bracketPairs": "active",
     "window.titleBarStyle": "custom",
@@ -37,6 +37,8 @@
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     "terminal.external.linuxExec": "ptyxis",
     "workbench.browser.openLocalhostLinks": false,
-    "extensions.autoUpdate": false,
-    "claudeCode.preferredLocation": "panel"
+    "extensions.autoUpdate": "off",
+    "claudeCode.preferredLocation": "panel",
+    "intellij.region": "europe",
+    "intellij.dataSharing": "anonymous"
 }
