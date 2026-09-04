@@ -65,8 +65,8 @@ if [[ "$MODE" == "backup" ]]; then
 elif [[ "$MODE" == "restore" ]]; then
   S3_MODIFIED=$(aws s3api head-object \
     --bucket "$BUCKET" --key "$KEY" \
-    --query 'LastModified' --output text 2>/dev/null) || {
-    echo "ERROR: No backup found at s3://$BUCKET/$KEY" >&2
+    --query 'LastModified' --output text 2>&1) || {
+    echo "ERROR: Could not reach s3://$BUCKET/$KEY — $S3_MODIFIED" >&2
     exit 1
   }
   S3_EPOCH=$(date -d "$S3_MODIFIED" +%s)
