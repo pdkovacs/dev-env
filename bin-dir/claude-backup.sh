@@ -1,7 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+EXPORT_SCRIPT="$SCRIPT_DIR/../scripts/export_conversations.py"
+
 CLAUDE_DIR="$HOME/.claude"
+CONV_DIR="$HOME/claude-conversations"
 FILE="/tmp/claude-backup.tar.xz"
 BUCKET="claude-pdkovacs-github-io"
 KEY="uploads/claude-backup.tar.xz"
@@ -16,15 +20,28 @@ done
 command -v aws >/dev/null || { echo "aws CLI not found" >&2; exit 1; }
 [ -d "$CLAUDE_DIR" ] || { echo "Claude directory not found: $CLAUDE_DIR" >&2; exit 1; }
 
+list_config_and_memory() {
+  [ -f "$CLAUDE_DIR/CLAUDE.md" ] && echo ".claude/CLAUDE.md" || true
+  [ -f "$CLAUDE_DIR/settings.json" ] && echo ".claude/settings.json" || true
+  find "$CLAUDE_DIR/projects" -path "*/memory/*" -type f 2>/dev/null \
+    | sed "s|^$HOME/||" \
+    || true
+}
+
+list_conversations() {
+  [ -d "$CONV_DIR" ] || return 0
+  find "$CONV_DIR" -type f -name '*.md' 2>/dev/null | sed "s|^$HOME/||" || true
+}
+
+# Restore compares local mtimes against the backup using this list. Exported
+# conversations are deliberately absent: they are regenerated on every backup
+# and would always look newer, blocking every restore.
 build_file_list() {
-  local list_file="$1"
-  {
-    [ -f "$CLAUDE_DIR/CLAUDE.md" ] && echo ".claude/CLAUDE.md" || true
-    [ -f "$CLAUDE_DIR/settings.json" ] && echo ".claude/settings.json" || true
-    find "$CLAUDE_DIR/projects" -path "*/memory/*" -type f 2>/dev/null \
-      | sed "s|^$HOME/||" \
-      || true
-  } | sort > "$list_file"
+  list_config_and_memory | sort > "$1"
+}
+
+build_backup_list() {
+  { list_config_and_memory; list_conversations; } | sort -u > "$1"
 }
 
 checksum_verify() {
@@ -46,7 +63,10 @@ LIST=$(mktemp)
 trap 'rm -f "$LIST" "$FILE"' EXIT
 
 if [[ "$MODE" == "backup" ]]; then
-  build_file_list "$LIST"
+  [ -f "$EXPORT_SCRIPT" ] || { echo "Exporter not found: $EXPORT_SCRIPT" >&2; exit 1; }
+  python3 "$EXPORT_SCRIPT"
+
+  build_backup_list "$LIST"
   echo "Backing up $(wc -l < "$LIST") files..."
 
   tar -cf - -C "$HOME" -T "$LIST" | xz -9 -T0 > "$FILE"
