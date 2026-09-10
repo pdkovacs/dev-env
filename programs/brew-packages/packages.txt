@@ -8,11 +8,11 @@ helm
 htop
 k9s
 lazygit
-llvm
 mockery
 neovim
 nvm
 pcre
+ripgrep
 rust
 terragrunt
 tfenv
