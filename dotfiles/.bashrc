@@ -83,6 +83,17 @@ else
 fi
 unset color_prompt force_color_prompt
 
+if ! type __git_ps1 &> /dev/null && [ -e /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+        . /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
+if type __git_ps1 &> /dev/null; then
+        export GIT_PS1_SHOWDIRTYSTATE=1
+        export GIT_PS1_SHOWUNTRACKEDFILES=1
+        export GIT_PS1_SHOWCOLORHINTS=1
+        export PROMPT_DIRTRIM=2
+        export PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
+fi
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm* | rxvt*)
