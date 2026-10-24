@@ -34,9 +34,18 @@ export HISTTIMEFORMAT="[%F %T] "
 # Change the file location because certain bash sessions truncate .bash_history file upon close.
 # http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
 export HISTFILE=~/.bash_eternal_history
-# Force prompt to write history after every command.
+# Force prompt to write history after every command, then reload it so that
+# commands from other shells become available too.
+#   history -a  append this shell's new commands to $HISTFILE
+#   history -c  clear the in-memory history
+#   history -r  read the whole $HISTFILE into memory (appends, hence the -c)
+# Not preferred:
+#   history -n  read only the lines not read yet; cheaper, but tracks a line
+#               count, so it can skip or duplicate entries if the file changes
+#               other than by appending
+# ${PROMPT_COMMAND:+;$PROMPT_COMMAND} adds the ';' and the existing value only if non-empty
 # http://superuser.com/questions/20900/bash-history-loss
-export PROMPT_COMMAND="history -a${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+export PROMPT_COMMAND="history -a; history -c; history -r${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 ###############################################################################
 
 # check the window size after each command and, if necessary,
@@ -91,7 +100,8 @@ if type __git_ps1 &> /dev/null; then
         export GIT_PS1_SHOWUNTRACKEDFILES=1
         export GIT_PS1_SHOWCOLORHINTS=1
         export PROMPT_DIRTRIM=2
-        export PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
+		# ${PROMPT_COMMAND:+;$PROMPT_COMMAND} adds the ';' and the existing value only if non-empty
+        export PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'"${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 fi
 
 # If this is an xterm set the title to user@host:dir
@@ -200,10 +210,12 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/github/pdkovacs/dev-env/bin-dir:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# export AWS_PROFILE= # skip backing this up
+# Machine-specific and semi-sensitive settings (e.g. AWS_PROFILE); not in the repo
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
+
 if [ -z "$AWS_PROFILE" ];
-then 
+then
 	echo "======================================"
-	echo "Export AWS_PROFILE from ~/.bashrc"
+	echo "Export AWS_PROFILE from ~/.bashrc.local"
 	echo "======================================"
 fi
