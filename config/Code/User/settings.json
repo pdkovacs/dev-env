@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "One Dark Pro Flat",
+    "workbench.colorTheme": "Dark+",
     "editor.fontFamily": "'Noto Sans Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.guides.bracketPairs": "active",
     "window.titleBarStyle": "custom",
@@ -41,5 +41,8 @@
     "claudeCode.preferredLocation": "sidebar",
     "intellij.region": "europe",
     "intellij.dataSharing": "anonymous",
-    "diffEditor.useInlineViewWhenSpaceIsLimited": false
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "jetbrains.kotlin.hints.lambda.receivers.parameters": false,
+    "jetbrains.kotlin.hints.type.function.parameter": false,
+    "gitlens.graph.details.location": "auto"
 }
